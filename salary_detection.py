@@ -102,7 +102,6 @@ class SalaryDetector:
             grp["days_since_last"] = grp["ob_transaction_timestamp"].diff().dt.days
 
             # A quick approach: we check if a large majority of intervals are within 28–35 days
-            # We'll mark intervals that are in day_interval_range
             valid_intervals = (grp["days_since_last"] >= day_interval_range[0]) & (
                 grp["days_since_last"] <= day_interval_range[1]
             )
